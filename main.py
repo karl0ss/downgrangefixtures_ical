@@ -78,8 +78,12 @@ exists = does_csv_exist()
 if exists:
     no_change = compare_dfs(df)
     if not no_change:
+        print("Fixtures updated, ical updated")
         store_df_as_csv(df)
         create_ical_file(df, cal)
+    else:
+        print("Fixtured not updated, no update to ical")
 else:
     store_df_as_csv(df)
     create_ical_file(df, cal)
+    print("New ical file created")
