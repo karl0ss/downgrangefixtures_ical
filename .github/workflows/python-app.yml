@@ -27,8 +27,8 @@ jobs:
       uses: snok/install-poetry@v1        
     - name: Install dependencies
       run: |
-        poetry install
+        poetry install --no-interaction
     - name: Get latests
       run: |
          ls
-         python main.py
+         poetry run main.py
