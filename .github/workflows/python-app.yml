@@ -31,4 +31,4 @@ jobs:
     - name: Get latests
       run: |
          ls
-         poetry run main.py
+         python main.py
