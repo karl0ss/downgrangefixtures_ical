@@ -60,6 +60,7 @@ def create_ical_file(df:pd.DataFrame, cal:Calendar)->None:
         event.add('summary', str(row['Home Team']) + f" {str(row['Unnamed: 4'])} " + str(row['Away Team.1']))
         event.add('description', f'Arrive by - {arrival_time}')
         event.add('dtstart', start_date_time)
+        # End 2 hours after start_date_time
         event.add('dtend', start_date_time + timedelta(hours=2))
         event.add('dtstamp', start_date_time)
         event.add('uid', str(uuid.uuid4()))
