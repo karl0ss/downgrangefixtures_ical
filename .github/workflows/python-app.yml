@@ -28,6 +28,6 @@ jobs:
     - name: Install dependencies
       run: |
         poetry install
-    # - name: Get latests
-    #   run: |
-    #      poetry run .\main.py
+    - name: Get latests
+      run: |
+         poetry run .\main.py
