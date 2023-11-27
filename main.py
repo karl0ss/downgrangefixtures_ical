@@ -5,51 +5,59 @@ import uuid
 import os
 
 def store_df_as_csv(df:pd.DataFrame)->None:
-    """_summary_
+    """Store dataframe as a CSV file.
 
     Args:
-        df (pd.DataFrame): _description_
+        df (pd.DataFrame): Dataframe of fixtures.
     """    
     df.to_csv('./fixtures.csv', index=False)
 def compare_dfs(df:pd.DataFrame)->bool:
-    """_summary_
+    """Compare the latest DF with the stored DF for any changes.
 
     Args:
-        df (pd.DataFrame): _description_
+        df (pd.DataFrame): Latest copy of fixtures in dataframe
 
     Returns:
-        bool: _description_
+        bool: True if match, False if no match.
     """    
     df2 = pd.read_csv('./fixtures.csv')
     return df.equals(df2)
 
 def write_calendar(cal:Calendar)->None:
-    """_summary_
+    """Write the cal object to an ics file.
 
     Args:
-        cal (Calendar): _description_
+        cal (Calendar): iCalendar object with all the ics details.
     """    
     f = open(os.path.join('./', 'fixtures.ics'), 'wb')
     f.write(cal.to_ical())
     f.close()
 
 def does_csv_exist()->bool:
-    """_summary_
+    """Check if the CSV file exists.
 
     Returns:
-        bool: _description_
+        bool: True if CSV file exists, False if not.
     """    
     return os.path.isfile('./fixtures.csv')
 
-def create_ical_file(df, cal)->None:
+def create_ical_file(df:pd.DataFrame, cal:Calendar)->None:
+    """Create an iCalendar file from a dataframe.
+
+    Args:
+        df (pd.DataFrame): Dataframe of fixtures.
+        cal (Calendar): iCalendar object with all the ics details.
+    """    
     for index, row in df.iterrows():
         event = Event()
         print(row['Date / Time'], row['Home Team'], row['Away Team.1'], row['Venue'])
         start_date_time = datetime.strptime(row['Date / Time'], '%d/%m/%y %H:%M')
+        # Set default 8am start time to normal 930 kickoff time.
         if start_date_time.hour == 8:
             start_date_time = start_date_time + timedelta(hours=1, minutes=30)
+        # Arrival time is 30 mins before kickoff time.
         arrival_time = start_date_time + timedelta(minutes=-30)
-        event.add('summary', str(row['Home Team']) + " vs " + str(row['Away Team.1']))
+        event.add('summary', str(row['Home Team']) + f" {str(row['Unnamed: 4'])} " + str(row['Away Team.1']))
         event.add('description', f'Arrive by - {arrival_time}')
         event.add('dtstart', start_date_time)
         event.add('dtend', start_date_time + timedelta(hours=2))
