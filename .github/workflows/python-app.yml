@@ -30,4 +30,5 @@ jobs:
         poetry install
     - name: Get latests
       run: |
-         poetry run .\main.py
+         ls
+         poetry run main.py
