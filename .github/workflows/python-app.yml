@@ -28,7 +28,6 @@ jobs:
     - name: Install dependencies
       run: |
         poetry install --no-interaction
-    - name: Get latests
+    - name: Get Latest Fixtures
       run: |
-         ls
          poetry run python main.py
