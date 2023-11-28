@@ -37,5 +37,7 @@ jobs:
       run: |
         git config --global user.name 'Karl Hudgell'
         git config --global user.email 'karl@me.com'
-        git commit -am "Updated ical"
-        git push
+        if ! git diff-index --quiet HEAD; then
+          git commit -am "Updated ical"
+          git push
+        fi
