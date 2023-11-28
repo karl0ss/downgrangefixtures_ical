@@ -2,7 +2,7 @@
 name = "thefafixturecalendar"
 version = "0.1.0"
 description = ""
-authors = ["Karl Hudgell <karl.hudgell@bjss.com>"]
+authors = ["Karl Hudgell <karl@k-world.me.uk>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
