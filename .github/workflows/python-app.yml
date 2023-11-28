@@ -35,9 +35,9 @@ jobs:
          poetry run python main.py
     - name: Commit Changes
       run: |
-        git config --global user.name 'Karl Hudgell'
-        git config --global user.email 'karl@me.com'
         if ! git diff-index --quiet HEAD; then
+          git config --global user.name 'Karl Hudgell'
+          git config --global user.email 'karl@k-world.me.uk'
           git commit -am "Updated ical"
           git push
         fi
