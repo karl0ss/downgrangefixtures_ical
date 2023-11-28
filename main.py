@@ -82,7 +82,7 @@ if exists:
         store_df_as_csv(df)
         create_ical_file(df, cal)
     else:
-        print("Fixtured not updated, no update to ical")
+        print("Fixtures not updated, no update to ical")
 else:
     store_df_as_csv(df)
     create_ical_file(df, cal)
