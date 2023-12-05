@@ -3,6 +3,18 @@ from icalendar import Calendar, Event
 from datetime import datetime, timedelta
 import uuid
 import os
+import requests
+
+telegram_bot_api_key = USER = os.getenv('TELEGRAM_BOT_API_KEY')
+telegram_bot_chat_id = USER = os.getenv('TELEGRAM_BOT_CHAT_ID')
+
+def send_message(message:str)->None:
+    """Send message to me on Telegram when updated.
+
+    Args:
+        message (str): String of message to send.
+    """    
+    requests.post(f'https://api.telegram.org/bot{telegram_bot_api_key}/sendMessage', json={'chat_id': telegram_bot_chat_id, 'text': message})  
 
 def store_df_as_csv(df:pd.DataFrame)->None:
     """Store dataframe as a CSV file.
@@ -81,9 +93,11 @@ if exists:
         print("Fixtures updated, ical updated")
         store_df_as_csv(df)
         create_ical_file(df, cal)
+        send_message("Fixtures updated, ical updated")
     else:
         print("Fixtures not updated, no update to ical")
 else:
     store_df_as_csv(df)
     create_ical_file(df, cal)
+    send_message("New ical file created")
     print("New ical file created")
