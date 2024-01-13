@@ -24,16 +24,17 @@ def store_df_as_csv(df:pd.DataFrame, name:str)->None:
         name (str): Name of the CSV file.
     """    
     df.to_csv(f'./{name}.csv', index=False)
-def compare_dfs(df:pd.DataFrame)->bool:
+def compare_dfs(df:pd.DataFrame, name:str)->bool:
     """Compare the latest DF with the stored DF for any changes.
 
     Args:
         df (pd.DataFrame): Latest copy of fixtures in dataframe
+        name (str): Name of the CSV file.
 
     Returns:
         bool: True if match, False if no match.
     """    
-    df2 = pd.read_csv('./fixtures.csv')
+    df2 = pd.read_csv(f'./{name}.csv')
     return df.equals(df2)
 
 def write_calendar(cal:Calendar)->None:
@@ -113,17 +114,21 @@ def create_ical_file(df:pd.DataFrame, cal:Calendar, table:pd.DataFrame)->None:
         cal.add_component(event)
     write_calendar(cal)
     
-def process_table():
-    table_df = pd.read_html("https://fulltime.thefa.com/table.html?selectedSeason=19010414&selectedDivision=165601607&ftsTablePageContent.fixtureAnalysisForm.standingsTableDay=13&ftsTablePageContent.fixtureAnalysisForm.standingsTableMonth=0&ftsTablePageContent.fixtureAnalysisForm.standingsTableYear=2024&activeTab=1")[0]    
+def process_table(table_df:pd.DataFrame)->pd.DataFrame:
     table_df = table_df[:-1]
     table_df.drop(table_df.columns[len(table_df.columns)-1], axis=1, inplace=True)
-    table_df['POS'] = table_df['POS'].astype('Int64')
-    table_df['P'] = table_df['P'].astype('Int64')
-    table_df['W'] = table_df['W'].astype('Int64')
-    table_df['D'] = table_df['D'].astype('Int64')
-    table_df['L'] = table_df['L'].astype('Int64')
-    table_df['PTS'] = table_df['PTS'].astype('Int64')
+    table_df['POS'] = table_df['POS'].astype('int')
+    table_df['P'] = table_df['P'].astype('int')
+    table_df['W'] = table_df['W'].astype('int')
+    table_df['D'] = table_df['D'].astype('int')
+    table_df['L'] = table_df['L'].astype('int')
+    table_df['PTS'] = table_df['PTS'].astype('int')
     store_df_as_csv(table_df, "table")
+    return table_df
+
+def compare_table():
+    table_df = pd.read_html("https://fulltime.thefa.com/table.html?selectedSeason=19010414&selectedDivision=165601607&ftsTablePageContent.fixtureAnalysisForm.standingsTableDay=13&ftsTablePageContent.fixtureAnalysisForm.standingsTableMonth=0&ftsTablePageContent.fixtureAnalysisForm.standingsTableYear=2024&activeTab=1")[0]    
+    store_df_as_csv(table_df, "base_table")
     return table_df
 
 cal = Calendar()
@@ -131,19 +136,22 @@ cal.add('prodid', 'Down Grange Pumas Fixtures')
 cal.add('version', '2.0')
 fixtures_df = pd.read_html("https://fulltime.thefa.com/fixtures.html?selectedSeason=19010414&selectedFixtureGroupAgeGroup=11&selectedFixtureGroupKey=1_579285719&selectedDateCode=all&selectedClub=&selectedTeam=466317969&selectedRelatedFixtureOption=3&selectedFixtureDateStatus=&selectedFixtureStatus=&previousSelectedFixtureGroupAgeGroup=11&previousSelectedFixtureGroupKey=1_579285719&previousSelectedClub=&itemsPerPage=25")[0]
 fixtures_df.head()
-table = process_table()
+table = compare_table()
 exists = does_csv_exist()
 if exists:
-    no_change = compare_dfs(fixtures_df)
-    if not no_change:
-        print("Fixtures updated, ical updated")
+    fixtures_change = compare_dfs(fixtures_df, "fixtures")
+    table_change = compare_dfs(table, "base_table")
+    if not table_change:
+        send_message("Table has updated")
+    if not all([fixtures_change, table_change]):
+        print("Data Updated, ical updated")
         store_df_as_csv(fixtures_df, "fixtures")
-        create_ical_file(fixtures_df, cal, table)
+        create_ical_file(fixtures_df, cal, process_table(table))
         send_message("Fixtures updated, ical updated")
     else:
-        print("Fixtures not updated, no update to ical")
+        print("No Data Updated, No update to ical")
 else:
     store_df_as_csv(fixtures_df, "fixtures")
-    create_ical_file(fixtures_df, cal, table)
+    create_ical_file(fixtures_df, cal, process_table(table))
     send_message("New ical file created")
     print("New ical file created")
