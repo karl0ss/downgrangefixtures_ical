@@ -103,8 +103,8 @@ def create_ical_file(df:pd.DataFrame, cal:Calendar, table:pd.DataFrame)->None:
         event.add('summary', summary)
         notes = row['Status / Notes']
         if pd.isna(notes):
-            notes = 'None'
-        event.add('description', "Arrive by - " + str(arrival_time) + "\n Notes - " + notes + "\n Table - \n" + "https://fulltime.thefa.com/table.html?selectedSeason=19010414&selectedDivision=165601607&ftsTablePageContent.fixtureAnalysisForm.standingsTableDay=14&ftsTablePageContent.fixtureAnalysisForm.standingsTableMonth=0&ftsTablePageContent.fixtureAnalysisForm.standingsTableYear=2024&activeTab=1")
+            notes = 'No Match Notes'
+        event.add('description', "Arrive by - " + str(arrival_time) + "\n" + notes + "\n Table - \n" + "https://fulltime.thefa.com/table.html?selectedSeason=19010414&selectedDivision=165601607&ftsTablePageContent.fixtureAnalysisForm.standingsTableDay=14&ftsTablePageContent.fixtureAnalysisForm.standingsTableMonth=0&ftsTablePageContent.fixtureAnalysisForm.standingsTableYear=2024&activeTab=1")
         event.add('dtstart', start_date_time)
         # End 2 hours after start_date_time
         event.add('dtend', start_date_time + timedelta(hours=2))
