@@ -3,7 +3,9 @@ from icalendar import Calendar, Event
 from datetime import datetime, timedelta
 import uuid
 import os
+import csv
 import requests
+import lxml.html as lh
 
 telegram_bot_api_key = USER = os.getenv('TELEGRAM_BOT_API_KEY')
 telegram_bot_chat_id = USER = os.getenv('TELEGRAM_BOT_CHAT_ID')
@@ -104,7 +106,7 @@ def create_ical_file(df:pd.DataFrame, cal:Calendar, table:pd.DataFrame)->None:
         notes = row['Status / Notes']
         if pd.isna(notes):
             notes = 'No Match Notes'
-        event.add('description', "Arrive by - " + str(arrival_time) + "\n" + notes + "\n Table - \n" + "https://fulltime.thefa.com/table.html?selectedSeason=19010414&selectedDivision=165601607&ftsTablePageContent.fixtureAnalysisForm.standingsTableDay=14&ftsTablePageContent.fixtureAnalysisForm.standingsTableMonth=0&ftsTablePageContent.fixtureAnalysisForm.standingsTableYear=2024&activeTab=1")
+        event.add('description', "Arrive by - " + str(arrival_time) + "\n" + notes + "\nTable -\n" + "https://fulltime.thefa.com/table.html?selectedSeason=19010414&selectedDivision=165601607&ftsTablePageContent.fixtureAnalysisForm.standingsTableDay=14&ftsTablePageContent.fixtureAnalysisForm.standingsTableMonth=0&ftsTablePageContent.fixtureAnalysisForm.standingsTableYear=2024&activeTab=1")
         event.add('dtstart', start_date_time)
         # End 2 hours after start_date_time
         event.add('dtend', start_date_time + timedelta(hours=2))
@@ -126,6 +128,22 @@ def process_table(table_df:pd.DataFrame)->pd.DataFrame:
     store_df_as_csv(table_df, "table")
     return table_df
 
+def process_results()->None:
+    req = requests.get("https://fulltime.thefa.com/results.html?selectedSeason=19010414&selectedFixtureGroupAgeGroup=11&selectedFixtureGroupKey=1_579285719&selectedRelatedFixtureOption=1&selectedClub=&selectedTeam=466317969&selectedDateCode=all&previousSelectedFixtureGroupAgeGroup=11&previousSelectedFixtureGroupKey=1_579285719&previousSelectedClub=")
+
+    doc = lh.fromstring(req.text)
+    headers = ['Date', 'Home Team', 'Score', 'Away Team']
+
+    with open('results.csv', 'w', newline='') as fp:
+        file = csv.writer(fp)    
+        file.writerow(headers)    
+        for idx,row in enumerate(doc.xpath("//div[contains(@id,'fixture')]"), start=1):
+            date = row.xpath(f'/html[1]/body[1]/main[1]/div[2]/section[1]/div[1]/div[3]/div[1]/div[2]/div[{idx}]/div[1]/div[3]/a[1]/span[1]//text()')[0]
+            home_team = row.xpath(f'/html[1]/body[1]/main[1]/div[2]/section[1]/div[1]/div[3]/div[1]/div[2]/div[{idx}]/div[1]/div[4]/div[1]/a[1]//text()')[0].strip()
+            score = row.xpath(f'/html[1]/body[1]/main[1]/div[2]/section[1]/div[1]/div[3]/div[1]/div[2]/div[{idx}]/div[1]/div[5]//text()')[0].strip()
+            away_team = row.xpath(f'/html[1]/body[1]/main[1]/div[2]/section[1]/div[1]/div[3]/div[1]/div[2]/div[{idx}]/div[1]/div[6]/div[2]/a[1]//text()')[0].strip()
+            file.writerow([date,home_team,score,away_team])
+
 def compare_table():
     table_df = pd.read_html("https://fulltime.thefa.com/table.html?selectedSeason=19010414&selectedDivision=165601607&ftsTablePageContent.fixtureAnalysisForm.standingsTableDay=13&ftsTablePageContent.fixtureAnalysisForm.standingsTableMonth=0&ftsTablePageContent.fixtureAnalysisForm.standingsTableYear=2024&activeTab=1")[0]    
     store_df_as_csv(table_df, "base_table")
@@ -136,6 +154,7 @@ cal.add('prodid', 'Down Grange Pumas Fixtures')
 cal.add('version', '2.0')
 fixtures_df = pd.read_html("https://fulltime.thefa.com/fixtures.html?selectedSeason=19010414&selectedFixtureGroupAgeGroup=11&selectedFixtureGroupKey=1_579285719&selectedDateCode=all&selectedClub=&selectedTeam=466317969&selectedRelatedFixtureOption=3&selectedFixtureDateStatus=&selectedFixtureStatus=&previousSelectedFixtureGroupAgeGroup=11&previousSelectedFixtureGroupKey=1_579285719&previousSelectedClub=&itemsPerPage=25")[0]
 fixtures_df.head()
+process_results()
 table = compare_table()
 exists = does_csv_exist()
 if exists:
