@@ -133,7 +133,7 @@ def process_table(table_df:pd.DataFrame)->pd.DataFrame:
     return table_df
 
 def process_results()->None:
-    req = requests.get("https://fulltime.thefa.com/results.html?selectedSeason=19010414&selectedFixtureGroupAgeGroup=11&selectedFixtureGroupKey=1_579285719&selectedRelatedFixtureOption=1&selectedClub=&selectedTeam=466317969&selectedDateCode=all&previousSelectedFixtureGroupAgeGroup=11&previousSelectedFixtureGroupKey=1_579285719&previousSelectedClub=")
+    req = requests.get("https://fulltime.thefa.com/results.html?selectedSeason=19010414&selectedFixtureGroupAgeGroup=11&selectedFixtureGroupKey=1_579285719&selectedRelatedFixtureOption=3&selectedClub=&selectedTeam=466317969&selectedDateCode=all&previousSelectedFixtureGroupAgeGroup=11&previousSelectedFixtureGroupKey=1_579285719&previousSelectedClub=")
 
     doc = lh.fromstring(req.text)
     headers = ['Date', 'Home Team', 'Score', 'Away Team']
@@ -145,6 +145,8 @@ def process_results()->None:
             date = row.xpath(f'/html[1]/body[1]/main[1]/div[2]/section[1]/div[1]/div[3]/div[1]/div[2]/div[{idx}]/div[1]/div[3]/a[1]/span[1]//text()')[0]
             home_team = row.xpath(f'/html[1]/body[1]/main[1]/div[2]/section[1]/div[1]/div[3]/div[1]/div[2]/div[{idx}]/div[1]/div[4]/div[1]/a[1]//text()')[0].strip()
             score = row.xpath(f'/html[1]/body[1]/main[1]/div[2]/section[1]/div[1]/div[3]/div[1]/div[2]/div[{idx}]/div[1]/div[5]//text()')[0].strip()
+            if score == 'X - X':
+                continue
             away_team = row.xpath(f'/html[1]/body[1]/main[1]/div[2]/section[1]/div[1]/div[3]/div[1]/div[2]/div[{idx}]/div[1]/div[6]/div[2]/a[1]//text()')[0].strip()
             file.writerow([date,home_team,score,away_team])
 
