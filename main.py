@@ -92,6 +92,8 @@ def create_ical_file(df:pd.DataFrame, cal:Calendar, table:pd.DataFrame)->None:
             away_team = str(row['Away Team.1']).replace(" U12","")
         venue = str(row['Venue'])
         print(row['Date / Time'], home_team, away_team, venue)
+        if row['Date / Time'] == 'TBC':
+            continue
         start_date_time = datetime.strptime(row['Date / Time'], '%d/%m/%y %H:%M')
         # Set default 8am start time to normal 930 kickoff time.
         if start_date_time.hour == 8:
