@@ -149,7 +149,7 @@ def process_results()->None:
             file.writerow([date,home_team,score,away_team])
 
 def compare_table():
-    table_df = pd.read_html("https://fulltime.thefa.com/table.html?selectedSeason=19010414&selectedDivision=165601607&ftsTablePageContent.fixtureAnalysisForm.standingsTableDay=13&ftsTablePageContent.fixtureAnalysisForm.standingsTableMonth=0&ftsTablePageContent.fixtureAnalysisForm.standingsTableYear=2024&activeTab=1")[0]    
+    table_df = pd.read_html("https://fulltime.thefa.com/table.html?league=9268728&selectedSeason=19010414&selectedDivision=165601607&selectedCompetition=0&selectedFixtureGroupKey=1_579285719")[0]    
     store_df_as_csv(table_df, "base_table")
     return table_df
 
