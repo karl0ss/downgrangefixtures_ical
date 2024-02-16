@@ -110,7 +110,7 @@ def create_ical_file(df:pd.DataFrame, cal:Calendar, table:pd.DataFrame)->None:
             notes = 'No Match Notes'
         elif notes == 'Postponed':
             continue
-        event.add('description', "Arrive by - " + str(arrival_time) + "\n" + notes + "\nTable -\n" + "https://fulltime.thefa.com/table.html?selectedSeason=19010414&selectedDivision=165601607&ftsTablePageContent.fixtureAnalysisForm.standingsTableDay=14&ftsTablePageContent.fixtureAnalysisForm.standingsTableMonth=0&ftsTablePageContent.fixtureAnalysisForm.standingsTableYear=2024&activeTab=1")
+        event.add('description', "Arrive by - " + str(arrival_time) + "\n" + notes + "\nTable -\n" + "https://fulltime.thefa.com/table.html?selectedSeason=19010414&selectedDivision=165601607")
         event.add('dtstart', start_date_time)
         # End 2 hours after start_date_time
         event.add('dtend', start_date_time + timedelta(hours=2))
