@@ -2,23 +2,11 @@ BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:Down Grange Pumas Fixtures
 BEGIN:VEVENT
-SUMMARY:(Cup) Bourne Blades Whites VS Down Grange Pumas
-DTSTART:20240224T093000
-DTEND:20240224T113000
-DTSTAMP:20240224T093000Z
-UID:be0fb0ef-59c1-47d7-b1c1-49690f00b33a
-DESCRIPTION:Arrive by - 2024-02-24 09:00:00\nNo Match Notes\nTable -\nhttp
- s://fulltime.thefa.com/index.html?league=9268728&selectedSeason=19010414&s
- electedDivision=165601607&selectedCompetition=0&selectedFixtureGroupKey=1_
- 579285719
-LOCATION:WAVERLEY ABBEY JUNIOR SCHOOL #2
-END:VEVENT
-BEGIN:VEVENT
 SUMMARY:(League) Tongham U12 (5th) VS Down Grange Pumas (4th)
 DTSTART:20240302T093000
 DTEND:20240302T113000
 DTSTAMP:20240302T093000Z
-UID:cba6d54f-d7fd-405a-95df-2f418b3a40b9
+UID:e8fb30bf-dd16-418d-963e-a5797c56671a
 DESCRIPTION:Arrive by - 2024-03-02 09:00:00\nNo Match Notes\nTable -\nhttp
  s://fulltime.thefa.com/index.html?league=9268728&selectedSeason=19010414&s
  electedDivision=165601607&selectedCompetition=0&selectedFixtureGroupKey=1_
@@ -30,7 +18,7 @@ SUMMARY:(League) Down Grange Pumas (4th) VS Farnham Town Panthers (1st)
 DTSTART:20240309T093000
 DTEND:20240309T113000
 DTSTAMP:20240309T093000Z
-UID:de899dd0-0850-4246-9b39-0816d0fd54c5
+UID:a6efd77d-792f-4a0e-a25e-90e044855444
 DESCRIPTION:Arrive by - 2024-03-09 09:00:00\nNo Match Notes\nTable -\nhttp
  s://fulltime.thefa.com/index.html?league=9268728&selectedSeason=19010414&s
  electedDivision=165601607&selectedCompetition=0&selectedFixtureGroupKey=1_
@@ -43,7 +31,7 @@ SUMMARY:(League) Down Grange Pumas (4th) VS Fernhurst Sports Terriers (3rd
 DTSTART:20240316T093000
 DTEND:20240316T113000
 DTSTAMP:20240316T093000Z
-UID:a8213980-b270-4c40-bf4c-91174a19f342
+UID:387a2aba-3752-44dc-b621-c57cdf62b06b
 DESCRIPTION:Arrive by - 2024-03-16 09:00:00\nNo Match Notes\nTable -\nhttp
  s://fulltime.thefa.com/index.html?league=9268728&selectedSeason=19010414&s
  electedDivision=165601607&selectedCompetition=0&selectedFixtureGroupKey=1_
@@ -55,7 +43,7 @@ SUMMARY:(League) Down Grange Pumas (4th) VS Tongham U12 (5th)
 DTSTART:20240406T093000
 DTEND:20240406T113000
 DTSTAMP:20240406T093000Z
-UID:5fcffdfa-a95a-4718-9334-6c7deb6bd61f
+UID:30303395-b17c-4495-a675-aec10606e840
 DESCRIPTION:Arrive by - 2024-04-06 09:00:00\nNo Match Notes\nTable -\nhttp
  s://fulltime.thefa.com/index.html?league=9268728&selectedSeason=19010414&s
  electedDivision=165601607&selectedCompetition=0&selectedFixtureGroupKey=1_
@@ -68,7 +56,7 @@ SUMMARY:(League) Down Grange Pumas (4th) VS Curley Park Rangers Mambas (8t
 DTSTART:20240423T093000
 DTEND:20240423T113000
 DTSTAMP:20240423T093000Z
-UID:3fa18b7b-5b32-4d28-8742-eb840475c953
+UID:ff760c86-8157-4b02-b6dd-0daa71675b34
 DESCRIPTION:Arrive by - 2024-04-23 09:00:00\nNo Match Notes\nTable -\nhttp
  s://fulltime.thefa.com/index.html?league=9268728&selectedSeason=19010414&s
  electedDivision=165601607&selectedCompetition=0&selectedFixtureGroupKey=1_
