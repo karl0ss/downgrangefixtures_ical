@@ -2,37 +2,11 @@ BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:Down Grange Pumas Fixtures
 BEGIN:VEVENT
-SUMMARY:(League) Down Grange Pumas (4th) VS Curley Park Rangers Mambas (8t
- h)
-DTSTART:20240323T093000
-DTEND:20240323T113000
-DTSTAMP:20240323T093000Z
-UID:384ccb6e-dc41-4d05-80c5-2d53244208aa
-DESCRIPTION:Arrive by - 2024-03-23 09:00:00\nMatch Notes:  Double Header -
-  Matches to be played at Curley Park's ground\nTable -\nhttps://fulltime.t
- hefa.com/index.html?league=9268728&selectedSeason=19010414&selectedDivisio
- n=165601607&selectedCompetition=0&selectedFixtureGroupKey=1_579285719
-LOCATION:LIGHTWATER RECREATION GROUND
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:(League) Curley Park Rangers Mambas (8th) VS Down Grange Pumas (4t
- h)
-DTSTART:20240323T090000
-DTEND:20240323T110000
-DTSTAMP:20240323T090000Z
-UID:35a52296-c826-459d-9970-edd1fb97023d
-DESCRIPTION:Arrive by - 2024-03-23 08:30:00\nMatch Notes:  Double Header -
-  Matches to be played at Curley Park's ground\nTable -\nhttps://fulltime.t
- hefa.com/index.html?league=9268728&selectedSeason=19010414&selectedDivisio
- n=165601607&selectedCompetition=0&selectedFixtureGroupKey=1_579285719
-LOCATION:COLLINGWOOD COLLEGE
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:(League) Down Grange Pumas (4th) VS Tongham U12 (5th)
+SUMMARY:(League) Down Grange Pumas (3rd) VS Tongham U12 (5th)
 DTSTART:20240406T093000
 DTEND:20240406T113000
 DTSTAMP:20240406T093000Z
-UID:f1921ab4-57b2-4323-8775-f6f6e066fc48
+UID:b4d9a546-7a93-4cbf-850b-1d4649c11b80
 DESCRIPTION:Arrive by - 2024-04-06 09:00:00\nMatch Notes:  Double Header -
   Matches to be played at Tongham's ground\nTable -\nhttps://fulltime.thefa
  .com/index.html?league=9268728&selectedSeason=19010414&selectedDivision=16
@@ -40,11 +14,11 @@ DESCRIPTION:Arrive by - 2024-04-06 09:00:00\nMatch Notes:  Double Header -
 LOCATION:POYLE ROAD RECREATION GROUND #1
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:(League) Tongham U12 (5th) VS Down Grange Pumas (4th)
+SUMMARY:(League) Tongham U12 (5th) VS Down Grange Pumas (3rd)
 DTSTART:20240406T100000
 DTEND:20240406T120000
 DTSTAMP:20240406T100000Z
-UID:c69db20f-8acd-4962-b6b5-74665559370e
+UID:5a925db0-3ea5-481e-b28c-06df7f6295bd
 DESCRIPTION:Arrive by - 2024-04-06 09:30:00\nMatch Notes:  Double Header -
   Matches to be played at Tongham's ground\nTable -\nhttps://fulltime.thefa
  .com/index.html?league=9268728&selectedSeason=19010414&selectedDivision=16
@@ -52,12 +26,12 @@ DESCRIPTION:Arrive by - 2024-04-06 09:30:00\nMatch Notes:  Double Header -
 LOCATION:POYLE ROAD RECREATION GROUND #2
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:(League) Down Grange Pumas (4th) VS Petersfield Town Revolution (7
+SUMMARY:(League) Down Grange Pumas (3rd) VS Petersfield Town Revolution (7
  th)
 DTSTART:20240413T093000
 DTEND:20240413T113000
 DTSTAMP:20240413T093000Z
-UID:4104fdc4-1b6f-4ea6-bb14-095da9fb371d
+UID:4d1124da-7d2b-4e06-a151-440b51466269
 DESCRIPTION:Arrive by - 2024-04-13 09:00:00\nMatch Notes:  Double Header -
   Matches to be played at Down Grange's ground\nTable -\nhttps://fulltime.t
  hefa.com/index.html?league=9268728&selectedSeason=19010414&selectedDivisio
@@ -65,12 +39,12 @@ DESCRIPTION:Arrive by - 2024-04-13 09:00:00\nMatch Notes:  Double Header -
 LOCATION:DOWN GRANGE SPORTS COMPLEX #2
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:(League) Petersfield Town Revolution (7th) VS Down Grange Pumas (4
- th)
+SUMMARY:(League) Petersfield Town Revolution (7th) VS Down Grange Pumas (3
+ rd)
 DTSTART:20240413T093000
 DTEND:20240413T113000
 DTSTAMP:20240413T093000Z
-UID:962b592e-0bcd-4070-9c34-516ff21d9458
+UID:59181737-c752-45bb-a242-b9092345da12
 DESCRIPTION:Arrive by - 2024-04-13 09:00:00\nMatch Notes:  Double Header -
   Matches to be played at Down Grange's ground\nTable -\nhttps://fulltime.t
  hefa.com/index.html?league=9268728&selectedSeason=19010414&selectedDivisio
@@ -78,11 +52,11 @@ DESCRIPTION:Arrive by - 2024-04-13 09:00:00\nMatch Notes:  Double Header -
 LOCATION:DOWN GRANGE SPORTS COMPLEX #2
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:(League) Down Grange Pumas (4th) VS Mytchett Athletic Hawks (6th)
+SUMMARY:(League) Down Grange Pumas (3rd) VS Mytchett Athletic Hawks (6th)
 DTSTART:20240420T093000
 DTEND:20240420T113000
 DTSTAMP:20240420T093000Z
-UID:f79bf2db-f67a-4ff2-a884-5570bf6c6ce4
+UID:96202bfd-829e-44d6-a36e-7d2fb642e274
 DESCRIPTION:Arrive by - 2024-04-20 09:00:00\nNo Match Notes\nTable -\nhttp
  s://fulltime.thefa.com/index.html?league=9268728&selectedSeason=19010414&s
  electedDivision=165601607&selectedCompetition=0&selectedFixtureGroupKey=1_
