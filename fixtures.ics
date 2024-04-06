@@ -2,36 +2,12 @@ BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:Down Grange Pumas Fixtures
 BEGIN:VEVENT
-SUMMARY:(League) Down Grange Pumas (3rd) VS Tongham U12 (5th)
-DTSTART:20240406T093000
-DTEND:20240406T113000
-DTSTAMP:20240406T093000Z
-UID:62fb642d-0b4c-4f52-a7ae-5ed0ce42e607
-DESCRIPTION:Arrive by - 2024-04-06 09:00:00\nMatch Notes:  Double Header -
-  Matches to be played at Tongham's ground\nTable -\nhttps://fulltime.thefa
- .com/index.html?league=9268728&selectedSeason=19010414&selectedDivision=16
- 5601607&selectedCompetition=0&selectedFixtureGroupKey=1_579285719
-LOCATION:POYLE ROAD RECREATION GROUND #1
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:(League) Tongham U12 (5th) VS Down Grange Pumas (3rd)
-DTSTART:20240406T093000
-DTEND:20240406T113000
-DTSTAMP:20240406T093000Z
-UID:3c4fd4c0-d8bd-4cfb-a6a6-916b2f7d3f34
-DESCRIPTION:Arrive by - 2024-04-06 09:00:00\nMatch Notes:  Double Header -
-  Matches to be played at Tongham's ground\nTable -\nhttps://fulltime.thefa
- .com/index.html?league=9268728&selectedSeason=19010414&selectedDivision=16
- 5601607&selectedCompetition=0&selectedFixtureGroupKey=1_579285719
-LOCATION:POYLE ROAD RECREATION GROUND #2
-END:VEVENT
-BEGIN:VEVENT
 SUMMARY:(League) Down Grange Pumas (3rd) VS Petersfield Town Revolution (7
  th)
 DTSTART:20240413T093000
 DTEND:20240413T113000
 DTSTAMP:20240413T093000Z
-UID:a04d96a5-e0ea-4d6a-9315-e854a7b61318
+UID:12367d4c-26c9-4a81-829d-5d80a3c68d44
 DESCRIPTION:Arrive by - 2024-04-13 09:00:00\nMatch Notes:  Double Header -
   Matches to be played at Down Grange's ground\nTable -\nhttps://fulltime.t
  hefa.com/index.html?league=9268728&selectedSeason=19010414&selectedDivisio
@@ -44,7 +20,7 @@ SUMMARY:(League) Petersfield Town Revolution (7th) VS Down Grange Pumas (3
 DTSTART:20240413T093000
 DTEND:20240413T113000
 DTSTAMP:20240413T093000Z
-UID:282f988a-15bd-4a58-aae8-02e33afb9db4
+UID:f735e122-3de4-442a-8ddb-f2fee1a667b2
 DESCRIPTION:Arrive by - 2024-04-13 09:00:00\nMatch Notes:  Double Header -
   Matches to be played at Down Grange's ground\nTable -\nhttps://fulltime.t
  hefa.com/index.html?league=9268728&selectedSeason=19010414&selectedDivisio
@@ -56,7 +32,7 @@ SUMMARY:(League) Down Grange Pumas (3rd) VS Mytchett Athletic Hawks (6th)
 DTSTART:20240420T093000
 DTEND:20240420T113000
 DTSTAMP:20240420T093000Z
-UID:6852dce2-3f34-47e5-8781-f491b7deef3a
+UID:7f5c547c-10be-4188-91fb-56dc87dbc56d
 DESCRIPTION:Arrive by - 2024-04-20 09:00:00\nNo Match Notes\nTable -\nhttp
  s://fulltime.thefa.com/index.html?league=9268728&selectedSeason=19010414&s
  electedDivision=165601607&selectedCompetition=0&selectedFixtureGroupKey=1_
