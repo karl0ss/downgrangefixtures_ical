@@ -2,37 +2,11 @@ BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:Down Grange Pumas Fixtures
 BEGIN:VEVENT
-SUMMARY:(League) Petersfield Town Revolution (7th) VS Down Grange Pumas (3
- rd)
-DTSTART:20240413T093000
-DTEND:20240413T113000
-DTSTAMP:20240413T093000Z
-UID:a36cc281-d1c1-4e16-83ad-983dd80fbb24
-DESCRIPTION:Arrive by - 2024-04-13 09:00:00\nMatch Notes:  Double Header -
-  Matches to be played at Down Grange's ground\nTable -\nhttps://fulltime.t
- hefa.com/index.html?league=9268728&selectedSeason=19010414&selectedDivisio
- n=165601607&selectedCompetition=0&selectedFixtureGroupKey=1_579285719
-LOCATION:DOWN GRANGE SPORTS COMPLEX #2
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:(League) Down Grange Pumas (3rd) VS Petersfield Town Revolution (7
- th)
-DTSTART:20240413T101500
-DTEND:20240413T121500
-DTSTAMP:20240413T101500Z
-UID:ec76e71b-2866-4008-b1a9-52746fbba8cc
-DESCRIPTION:Arrive by - 2024-04-13 09:45:00\nMatch Notes:  Double Header -
-  Matches to be played at Down Grange's ground\nTable -\nhttps://fulltime.t
- hefa.com/index.html?league=9268728&selectedSeason=19010414&selectedDivisio
- n=165601607&selectedCompetition=0&selectedFixtureGroupKey=1_579285719
-LOCATION:WINKLEBURY FOOTBALL COMPLEX
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:(League) Down Grange Pumas (3rd) VS Mytchett Athletic Hawks (6th)
+SUMMARY:(League) Down Grange Pumas (2nd) VS Mytchett Athletic Hawks (6th)
 DTSTART:20240420T093000
 DTEND:20240420T113000
 DTSTAMP:20240420T093000Z
-UID:6283ae0a-ae23-45b2-97da-94910c9f233d
+UID:b95d53d5-128e-4078-9989-6ade25bcfddc
 DESCRIPTION:Arrive by - 2024-04-20 09:00:00\nNo Match Notes\nTable -\nhttp
  s://fulltime.thefa.com/index.html?league=9268728&selectedSeason=19010414&s
  electedDivision=165601607&selectedCompetition=0&selectedFixtureGroupKey=1_
