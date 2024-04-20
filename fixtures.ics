@@ -1,16 +1,4 @@
 BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:Down Grange Pumas Fixtures
-BEGIN:VEVENT
-SUMMARY:(League) Down Grange Pumas (2nd) VS Mytchett Athletic Hawks (6th)
-DTSTART:20240420T093000
-DTEND:20240420T113000
-DTSTAMP:20240420T093000Z
-UID:b95d53d5-128e-4078-9989-6ade25bcfddc
-DESCRIPTION:Arrive by - 2024-04-20 09:00:00\nNo Match Notes\nTable -\nhttp
- s://fulltime.thefa.com/index.html?league=9268728&selectedSeason=19010414&s
- electedDivision=165601607&selectedCompetition=0&selectedFixtureGroupKey=1_
- 579285719
-LOCATION:DOWN GRANGE SPORTS COMPLEX #2
-END:VEVENT
 END:VCALENDAR
