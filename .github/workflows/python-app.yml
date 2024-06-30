@@ -1,46 +1,46 @@
-# This workflow will install Python dependencies, run tests and lint with a single version of Python
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+# # This workflow will install Python dependencies, run tests and lint with a single version of Python
+# # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
 
-name: Python application
+# name: Python application
 
-on:
-  schedule:
-    - cron:  '30 5,17 * * *'
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+# on:
+#   schedule:
+#     - cron:  '30 5,17 * * *'
+#   push:
+#     branches: [ "main" ]
+#   pull_request:
+#     branches: [ "main" ]
 
-permissions:
-  contents: write
+# permissions:
+#   contents: write
 
-jobs:
-  build:
+# jobs:
+#   build:
 
-    runs-on: ubuntu-latest
+#     runs-on: ubuntu-latest
 
-    steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python 3.10
-      uses: actions/setup-python@v3
-      with:
-        python-version: "3.10"
-    - name: Install Poetry
-      uses: snok/install-poetry@v1        
-    - name: Install dependencies
-      run: |
-        poetry install --no-interaction --no-root
-    - name: Get Latest Fixtures
-      env:
-        TELEGRAM_BOT_API_KEY: ${{ secrets.TELEGRAMBOTID }}
-        TELEGRAM_BOT_CHAT_ID: ${{ secrets.TELEGRAMCHATID }}
-      run: |
-        poetry run python main.py
-    - name: Commit Changes
-      run: |
-        if ! git diff-index --quiet HEAD; then
-          git config --global user.name 'Karl Hudgell'
-          git config --global user.email 'karl@k-world.me.uk'
-          git commit -am "Updated ical"
-          git push
-        fi
+#     steps:
+#     - uses: actions/checkout@v3
+#     - name: Set up Python 3.10
+#       uses: actions/setup-python@v3
+#       with:
+#         python-version: "3.10"
+#     - name: Install Poetry
+#       uses: snok/install-poetry@v1        
+#     - name: Install dependencies
+#       run: |
+#         poetry install --no-interaction --no-root
+#     - name: Get Latest Fixtures
+#       env:
+#         TELEGRAM_BOT_API_KEY: ${{ secrets.TELEGRAMBOTID }}
+#         TELEGRAM_BOT_CHAT_ID: ${{ secrets.TELEGRAMCHATID }}
+#       run: |
+#         poetry run python main.py
+#     - name: Commit Changes
+#       run: |
+#         if ! git diff-index --quiet HEAD; then
+#           git config --global user.name 'Karl Hudgell'
+#           git config --global user.email 'karl@k-world.me.uk'
+#           git commit -am "Updated ical"
+#           git push
+#         fi
